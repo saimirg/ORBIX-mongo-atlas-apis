@@ -93,5 +93,10 @@
     {
         "name": "Delete_User_Triger_Test",
         "private": false
+    },
+    {
+        "name": "deleteAppUser",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
