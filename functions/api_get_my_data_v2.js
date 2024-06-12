@@ -24,7 +24,6 @@ exports = async function(payload) {
         forceUpgrade : false,
   }
   
-  
   //response Object
   let responseObject =   {  
         currentVersion : "0",
