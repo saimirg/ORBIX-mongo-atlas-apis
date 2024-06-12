@@ -33,7 +33,7 @@ exports = function({ query, headers, body}, response) {
       let upgraderesponse = {
     "versionName":"0.33",
     "versionCode": "999999999999999999999999999999999999",
-    "apkUrl":"https://apk.orbixplay.com/AndroidStb-v.0.33.apk",
+    "apkUrl":"https://apk.orbixplay.com/0.33-firetv-orbixapp-release.apk",
     "forceUpdate": false
   };
     
