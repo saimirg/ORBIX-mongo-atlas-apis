@@ -26,11 +26,11 @@ exports = async function onNewCustomFunctionUser(user) {
   
   // Create a new Date object for the license end date, 7 days in the future
   const licenseEndDate = new Date(createdAt.getTime()); // Clone the current date
-  licenseEndDate.setDate(createdAt.getDate() + 630); // Add 7 days to the cloned date
+  licenseEndDate.setDate(createdAt.getDate() + 7); // Add 7 days to the cloned date
  
   // add vpn license end date
    const licenseVpnEndDate = new Date(createdAt.getTime()); // Clone the current date
-  licenseVpnEndDate.setDate(createdAt.getDate() + 630); // Add 7 days to the cloned date
+  licenseVpnEndDate.setDate(createdAt.getDate() + 7); // Add 7 days to the cloned date
 
   // Insert a new user into the 'devices' collection with the appropriate fields
   return await users.insertOne({
