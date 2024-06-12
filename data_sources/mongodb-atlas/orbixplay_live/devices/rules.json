@@ -1,0 +1,30 @@
+{
+    "database": "orbixplay_live",
+    "collection": "devices",
+    "filters": [
+        {
+            "name": "MyDataOnlyFilter",
+            "query": {
+                "mongo_user_id": "%%user.id"
+            },
+            "apply_when": {
+                "%%true": true
+            }
+        }
+    ],
+    "roles": [
+        {
+            "name": "readAll",
+            "apply_when": {},
+            "document_filters": {
+                "read": true,
+                "write": true
+            },
+            "insert": true,
+            "delete": false,
+            "search": true,
+            "read": true,
+            "write": true
+        }
+    ]
+}

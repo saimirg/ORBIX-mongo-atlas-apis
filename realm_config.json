@@ -1,0 +1,8 @@
+{
+    "app_id": "live-lbgjx",
+    "config_version": 20210101,
+    "name": "live",
+    "provider_region": "aws-eu-central-1",
+    "deployment_model": "LOCAL",
+    "environment": "production"
+}

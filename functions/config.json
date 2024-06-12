@@ -1,0 +1,93 @@
+[
+    {
+        "name": "get_qr_code",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "get_qr_code_playlist",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "onNewCustomFunctionUser",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "addplaylist",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "api_verify_license",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "authentication_custom_function",
+        "private": true
+    },
+    {
+        "name": "api_get_my_data",
+        "private": false
+    },
+    {
+        "name": "testendpoint",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "api_hide_playlist",
+        "private": false
+    },
+    {
+        "name": "api_get_my_proxy",
+        "private": false
+    },
+    {
+        "name": "teset_get_free_api",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "get_qr_code_playlist_cfv2",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "demo_get_all_devices",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "api_get_my_data_v2",
+        "private": false
+    },
+    {
+        "name": "api_hide_playlist_v2",
+        "private": false
+    },
+    {
+        "name": "add_playlist_mobile",
+        "private": false
+    },
+    {
+        "name": "upgradeapk",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "get_qr_code_vpn_license",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "get_subscription",
+        "private": false
+    }
+]

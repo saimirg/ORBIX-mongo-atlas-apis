@@ -1,0 +1,211 @@
+[
+    {
+        "http_method": "POST",
+        "route": "/checklicense",
+        "function_name": "api_verify_license",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/getqrcode",
+        "function_name": "get_qr_code",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/getqrcodelicense",
+        "function_name": "get_qr_code",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/getqrcodeplaylist",
+        "function_name": "get_qr_code_playlist",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "POST",
+        "route": "/addplaylist",
+        "function_name": "addplaylist",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "POST",
+        "route": "/playlist2",
+        "function_name": "addplaylist",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "*",
+        "route": "/getmydata",
+        "function_name": "api_get_my_data_v2",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/testendpoint",
+        "function_name": "testendpoint",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": false,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/getmyproxy",
+        "function_name": "api_get_my_proxy",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "POST",
+        "route": "/hideplaylist",
+        "function_name": "api_hide_playlist_v2",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/testfreeapi",
+        "function_name": "teset_get_free_api",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "POST",
+        "route": "/postfreeapi",
+        "function_name": "teset_get_free_api",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/getqrcodeplaylistv2",
+        "function_name": "get_qr_code_playlist_cfv2",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/demogetalldevices",
+        "function_name": "demo_get_all_devices",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/getmydatav2",
+        "function_name": "api_get_my_data_v2",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "POST",
+        "route": "/add_playlist_on_mobile",
+        "function_name": "add_playlist_mobile",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": false,
+        "fetch_custom_user_data": true,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/upgradeapk",
+        "function_name": "upgradeapk",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "GET",
+        "route": "/get_qr_code_vpn_license",
+        "function_name": "get_qr_code_vpn_license",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    },
+    {
+        "http_method": "POST",
+        "route": "/get_subscription",
+        "function_name": "get_subscription",
+        "validation_method": "NO_VALIDATION",
+        "respond_result": true,
+        "fetch_custom_user_data": false,
+        "create_user_on_auth": false,
+        "disabled": false,
+        "return_type": "JSON"
+    }
+]
