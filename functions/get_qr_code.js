@@ -5,7 +5,7 @@ exports = async function(payload) {
     //const queryParams = payload.query;
     //const dataToEncode = "queryParams.yourParameter; // Replace 'yourParameter' with the name of your query parameter";
     // const paymenturl = "https://buy.stripe.com/test_eVacOv8h9cpm51e3cj?client_reference_id="+context.user.custom_data.deviceid;
-      const paymenturl = "https://orbixplay.com/pricing-test?client_reference_id="+context.user.custom_data.deviceid;
+      const paymenturl = "https://orbixplay.com/pricing?client_reference_id="+context.user.custom_data.deviceid;
 
     if (!paymenturl) {
         // Return an error response if the query parameter is missing
