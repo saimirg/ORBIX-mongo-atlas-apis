@@ -1,7 +1,7 @@
 const qr = require('qr-image');
 
 exports = async function(payload) {
-      const paymenturl = "https://orbixplay.com/pricing-test?client_reference_id="+context.user.custom_data.deviceid;
+      const paymenturl = "https://orbixplay.com/pricing?client_reference_id="+context.user.custom_data.deviceid;
    // const deviceid = "AA:AA:AA:AA:AA:AA"
     if (!paymenturl) {
         // Return an error response if the query parameter is missing
