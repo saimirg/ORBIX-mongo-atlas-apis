@@ -1,7 +1,7 @@
 {
     "name": "Trigger-Delete-User-Test",
     "type": "DATABASE",
-    "disabled": false,
+    "disabled": true,
     "config": {
         "collection": "devices",
         "database": "orbixplay_live",
