@@ -5,7 +5,7 @@
     "config": {
         "collection": "devices",
         "database": "orbixplay_live",
-        "full_document": true,
+        "full_document": false,
         "full_document_before_change": false,
         "match": {},
         "maximum_throughput": false,
