@@ -5,7 +5,7 @@ exports = async function(payload) {
   //keto ndryshohen manualisth kur kemi version te ri
   //Android TV
   const androidtvObj = {
-        currentVersion : "0.27",
+        currentVersion : "0.33",
         notifyUpgrade : false,
         forceUpgrade : false,
   }
