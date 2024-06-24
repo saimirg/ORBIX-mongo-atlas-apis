@@ -89,5 +89,9 @@
     {
         "name": "get_subscription",
         "private": false
+    },
+    {
+        "name": "api_get_my_data_v_test",
+        "private": false
     }
 ]
