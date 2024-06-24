@@ -86,6 +86,7 @@ exports = async function(payload) {
   
 
   const collection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("devices");
+  const whitelistCollection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("whitelist");
   
   try {
     const customDataId = context.user.id;
@@ -116,6 +117,17 @@ exports = async function(payload) {
       if (deviceData.playlists && Array.isArray(deviceData.playlists)) {
         deviceData.playlists = deviceData.playlists.filter(playlist => !playlist.isHidden);
       }
+      // checking for whitelist 
+       const whitelist = await whitelistCollection.find().toArray();
+        const whitelistHosts = whitelist.map(item => item.host);
+
+        deviceData.playlists = deviceData.playlists.map(playlist => {
+          return {
+            ...playlist,
+            free: whitelistHosts.includes(playlist.url)
+          };
+        });
+      
       
       deviceData.proxy_url = "https://proxy1.orbixplay.com/";
       deviceData.hasNewVersion = responseObject.notifyUpgrade;
