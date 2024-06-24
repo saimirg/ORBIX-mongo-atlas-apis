@@ -118,13 +118,13 @@ exports = async function(payload) {
         deviceData.playlists = deviceData.playlists.filter(playlist => !playlist.isHidden);
       }
       // checking for whitelist 
-       const whitelist = await whitelistCollection.find().toArray();
-        const whitelistHosts = whitelist.map(item => item.host);
+       const whitelistHost = await whitelistCollection.find().toArray();
+        const whitelistHosts = whitelistHost.map(item => item.host);
 
         deviceData.playlists = deviceData.playlists.map(playlist => {
           return {
             ...playlist,
-            free: whitelistHosts.includes(playlist.url)
+            whitelist: whitelistHosts.includes(playlist.url)
           };
         });
       
