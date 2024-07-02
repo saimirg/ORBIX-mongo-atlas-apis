@@ -92,7 +92,7 @@ exports = async function onNewCustomFunctionUser(user) {
   const transactionInsertResult = await transactions.insertOne({
     deviceid: externalId,
     created_transaction_time: createdAt,
-    package_experation_time: licenseEndDate,
+    package_expiration_time: licenseEndDate,
     transactionId: null, 
     package_name: "Free Trial",
     price: 0, 
