@@ -58,17 +58,6 @@ exports = async function onNewCustomFunctionUser(user) {
   });
 
   const externalId = customFunctionIdentity.id;
-  //    const ip = context.request.remoteIPAddress || "Unknown IP";
-  // console.log("ip: ", ip);
-    // Log the context.request object for debugging
-  // if (context.request) {
-  //   console.log("Context Request: ", JSON.stringify(context.request, null, 2));
-  // } else {
-  //   console.log("Context Request is not available.");
-  // }
-
-  // const remoteip = context.request ? context.request.remoteIPAddress : null;
-  // console.log("Remote IP Address: ", remoteip);
   const mdb = context.services.get("mongodb-atlas");
   const users = mdb.db("orbixplay_live").collection("devices");
   const transactions = mdb.db("orbixplay_live").collection("transactions");
@@ -98,7 +87,6 @@ exports = async function onNewCustomFunctionUser(user) {
   // Insert a new transaction into the 'transactions' collection
   const transactionInsertResult = await transactions.insertOne({
     deviceid: externalId,
-    // ip: ip,
     created_transaction_time: createdAt,
     package_expiration_time: licenseEndDate,
     transactionId: null, 
