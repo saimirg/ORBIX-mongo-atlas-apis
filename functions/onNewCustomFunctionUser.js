@@ -59,7 +59,7 @@ exports = async function onNewCustomFunctionUser(user) {
 
   const externalId = customFunctionIdentity.id;
 
- const remoteip = context.request.remoteIPAddress;
+ // const remoteip = context.request.remoteIPAddress;
   const mdb = context.services.get("mongodb-atlas");
   const users = mdb.db("orbixplay_live").collection("devices");
   const transactions = mdb.db("orbixplay_live").collection("transactions");
@@ -91,7 +91,7 @@ exports = async function onNewCustomFunctionUser(user) {
   // Insert a new transaction into the 'transactions' collection
   const transactionInsertResult = await transactions.insertOne({
     deviceid: externalId,
-    ip: remoteip,
+    // ip: remoteip,
     created_transaction_time: createdAt,
     package_expiration_time: licenseEndDate,
     transactionId: null, 
