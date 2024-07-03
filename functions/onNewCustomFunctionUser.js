@@ -58,6 +58,8 @@ exports = async function onNewCustomFunctionUser(user) {
   });
 
   const externalId = customFunctionIdentity.id;
+     const ip = context.request.remoteIPAddress || "Unknown IP";
+  console.log("ip: ", ip);
     // Log the context.request object for debugging
   // if (context.request) {
   //   console.log("Context Request: ", JSON.stringify(context.request, null, 2));
@@ -96,7 +98,7 @@ exports = async function onNewCustomFunctionUser(user) {
   // Insert a new transaction into the 'transactions' collection
   const transactionInsertResult = await transactions.insertOne({
     deviceid: externalId,
-    // ip: remoteip,
+    ip: ip,
     created_transaction_time: createdAt,
     package_expiration_time: licenseEndDate,
     transactionId: null, 
