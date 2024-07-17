@@ -5,21 +5,21 @@ exports = async function(payload) {
   //keto ndryshohen manualisth kur kemi version te ri
   //Android TV
   const androidtvObj = {
-        currentVersion : "0.37",
+        currentVersion : "0.40",
         notifyUpgrade : false,
         forceUpgrade : false,
   }
   
   //Firestick 
   const firestickObj = {
-        currentVersion : "0.39",
+        currentVersion : "0.40",
         notifyUpgrade : false,
         forceUpgrade : false,
   }
   
   //Android AOSP STB
   const androidstbObj = {
-        currentVersion : "0.39",
+        currentVersion : "0.40",
         notifyUpgrade : false,
         forceUpgrade : false,
   }
