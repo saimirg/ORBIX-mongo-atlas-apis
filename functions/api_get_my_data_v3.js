@@ -12,7 +12,7 @@ exports = async function(payload) {
   
   //Firestick 
   const firestickObj = {
-        currentVersion : "0.40",
+        currentVersion : "0.41",
         notifyUpgrade : false,
         forceUpgrade : false,
   }
