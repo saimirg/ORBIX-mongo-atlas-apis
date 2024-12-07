@@ -29,10 +29,10 @@ exports = function({ query, headers, body}, response) {
     // The return value of the function is sent as the response back to the client
     // when the "Respond with Result" setting is set.
     // response.setHeader('Content-Type', 'application/text')
-
+// 999999999999999999999999999999999999999999999999
       let upgraderesponse = {
     "versionName":"0.46",
-    "versionCode": "999999999999999999999999999999999999999999999999",
+    "versionCode": "103000500",
     "apkUrl":"https://apk.orbixplay.com/Firestick-v.0.46.apk",
     "forceUpdate": false
   };
