@@ -32,9 +32,9 @@ exports = function({ query, headers, body}, response) {
 // 999999999999999999999999999999999999999999999999
       let upgraderesponse = {
     "versionName":"0.53",
-    "versionCode": "103000501",
+    "versionCode": "103000500",
     "apkUrl":"https://apk.orbixplay.com/orbixplay-tv-os-V.0.53-app-release.apk",
-    "forceUpdate": true
+    "forceUpdate": false
   };
     
     return  upgraderesponse;
