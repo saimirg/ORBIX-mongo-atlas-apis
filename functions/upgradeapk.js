@@ -36,6 +36,5 @@ exports = function({ query, headers, body}, response) {
     "apkUrl":"https://apk.orbixplay.com/orbixplay-tv-os-V-0.54-app-release.apk",
     "forceUpdate": false
   };
-    //https://apk.orbixplay.com/Firestick-v.0.54.apk
     return  upgraderesponse;
 };
