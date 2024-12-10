@@ -33,9 +33,9 @@ exports = function({ query, headers, body}, response) {
       let upgraderesponse = {
     "versionName":"0.54",
     "versionCode": "54000000",
-    "apkUrl":"https://apk.orbixplay.com/Firestick-v.0.54.apk",
+    "apkUrl":"https://apk.orbixplay.com/firestick.apk",
     "forceUpdate": false
   };
-    
+    //https://apk.orbixplay.com/Firestick-v.0.54.apk
     return  upgraderesponse;
 };
