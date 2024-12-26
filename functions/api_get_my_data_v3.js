@@ -12,14 +12,14 @@ exports = async function(payload) {
   
   //Firestick 
   const firestickObj = {
-        currentVersion : "0.56",
+        currentVersion : "0.57",
         notifyUpgrade : false,
         forceUpgrade : false,
   }
   
   //Android AOSP STB
   const androidstbObj = {
-        currentVersion : "0.56",
+        currentVersion : "0.57",
         notifyUpgrade : false,
         forceUpgrade : false,
   }
