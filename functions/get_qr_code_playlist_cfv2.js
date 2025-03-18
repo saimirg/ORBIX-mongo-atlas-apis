@@ -5,7 +5,7 @@ exports = async function(payload) {
     //const queryParams = payload.query;
     //const dataToEncode = "queryParams.yourParameter; // Replace 'yourParameter' with the name of your query parameter";
     // const playlisturl = "https://stitch-statichosting-prod.s3.amazonaws.com/64b90239e73af885920de2e0/orbixplayform.html?client_reference_id="+context.user.custom_data.deviceid;
-       const playlisturl = "https://my-list.orbixplay.com/?client_reference_id="+context.user.custom_data.deviceid;
+       const playlisturl = "https://orbixplay.com/mylist/?client_reference_id="+context.user.custom_data.deviceid;
 
     if (!playlisturl) {
         // Return an error response if the query parameter is missing
