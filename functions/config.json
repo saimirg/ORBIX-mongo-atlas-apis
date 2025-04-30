@@ -93,5 +93,9 @@
     {
         "name": "api_get_my_data_v3",
         "private": false
+    },
+    {
+        "name": "api_get_my_data_v4",
+        "private": false
     }
 ]
