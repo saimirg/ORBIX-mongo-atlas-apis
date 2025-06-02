@@ -67,62 +67,75 @@ exports = async function(payload) {
     }
   }
 
-  const collection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("devices");
-  const whitelistCollection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("whitelist");
-  const orbixCodes = context.services.get("mongodb-atlas").db("orbixplay_live").collection("orbix_codes");
+ const collection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("devices");
+const whitelistCollection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("whitelist");
+const orbixCodes = context.services.get("mongodb-atlas").db("orbixplay_live").collection("orbix_codes");
 
-  try {
-    const customDataId = context.user.id;
+try {
+  const customDataId = context.user.id;
 
-    const device = await collection.aggregate([
-      {
-        $match: { mongo_user_id: customDataId }
-      },
-      {
-        $lookup: {
-          from: "playlists",
-          localField: "deviceid",
-          foreignField: "deviceid",
-          as: "playlists"
+  const device = await collection.aggregate([
+    {
+      $match: { mongo_user_id: customDataId }
+    },
+    {
+      $lookup: {
+        from: "playlists",
+        localField: "deviceid",
+        foreignField: "deviceid",
+        as: "playlists"
+      }
+    },
+    {
+      $limit: 1
+    }
+  ]).toArray();
+
+  if (device.length > 0) {
+    const deviceData = device[0];
+
+    if (deviceData.playlists && Array.isArray(deviceData.playlists)) {
+      // Filter out hidden playlists
+      deviceData.playlists = deviceData.playlists.filter(playlist => !playlist.isHidden);
+
+      // Resolve missing URLs from orbix_codes based on host_code
+      for (const playlist of deviceData.playlists) {
+        if (!playlist.url && playlist.host_code) {
+          const matchedHost = await orbixCodes.findOne({ host_code: playlist.host_code });
+          if (matchedHost && matchedHost.host_url) {
+            playlist.url = matchedHost.host_url;
+          }
         }
-      },
-      {
-        $limit: 1
-      }
-    ]).toArray();
-
-    if (device.length > 0) {
-      const deviceData = device[0];
-
-      if (deviceData.playlists && Array.isArray(deviceData.playlists)) {
-        deviceData.playlists = deviceData.playlists.filter(playlist => !playlist.isHidden);
       }
 
+      // Load whitelist hosts
       const whitelistHost = await whitelistCollection.find().toArray();
       const whitelistHosts = whitelistHost.map(item => item.host);
 
+      // Apply whitelist check
       deviceData.playlists = deviceData.playlists.map(playlist => {
         const existingWhitelist = typeof playlist.whitelist === 'boolean'
           ? playlist.whitelist
           : whitelistHosts.includes(playlist.url);
+
         return {
           ...playlist,
           whitelist: existingWhitelist
         };
       });
-
-      deviceData.proxy_url = "https://proxy1.orbixplay.com/";
-      deviceData.hasNewVersion = responseObject.notifyUpgrade;
-      deviceData.newversion = responseObject.currentVersion;
-      deviceData.forceUpgrade = responseObject.forceUpgrade;
-
-      return deviceData;
-    } else {
-      console.log('No device found with the given ID.');
-      return null;
     }
-  } catch (e) {
-    console.error('Error querying device by ID:', e);
-    throw e;
+
+    // Add additional device info
+    deviceData.proxy_url = "https://proxy1.orbixplay.com/";
+    deviceData.hasNewVersion = responseObject.notifyUpgrade;
+    deviceData.newversion = responseObject.currentVersion;
+    deviceData.forceUpgrade = responseObject.forceUpgrade;
+
+    return deviceData;
   }
+
+  return { error: "Device not found." };
+} catch (err) {
+  return { error: err.message };
+}
 };
