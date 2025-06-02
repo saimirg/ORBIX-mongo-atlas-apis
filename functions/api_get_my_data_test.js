@@ -69,6 +69,7 @@ exports = async function(payload) {
 
   const collection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("devices");
   const whitelistCollection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("whitelist");
+  const orbixCodes = context.services.get("mongodb-atlas").db("orbixplay_live").collection("orbix_codes");
 
   try {
     const customDataId = context.user.id;
