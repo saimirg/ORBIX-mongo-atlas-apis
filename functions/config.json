@@ -97,5 +97,9 @@
     {
         "name": "api_get_my_data_v4",
         "private": false
+    },
+    {
+        "name": "api_get_my_data_test",
+        "private": false
     }
 ]
