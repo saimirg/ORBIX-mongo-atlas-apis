@@ -9,7 +9,7 @@
                 "read": true,
                 "write": true
             },
-            "insert": true,
+            "insert": false,
             "delete": false,
             "search": true,
             "read": true,
