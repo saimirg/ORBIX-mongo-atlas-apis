@@ -1,0 +1,19 @@
+{
+    "database": "orbixplay_live",
+    "collection": "orbix_codes",
+    "roles": [
+        {
+            "name": "readAndWriteAll",
+            "apply_when": {},
+            "document_filters": {
+                "read": true,
+                "write": true
+            },
+            "insert": true,
+            "delete": false,
+            "search": true,
+            "read": true,
+            "write": true
+        }
+    ]
+}
