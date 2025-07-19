@@ -8,7 +8,7 @@ exports = async function(payload) {
 
   // Firestick 
   const firestickObj = {
-    currentVersion: "0.71",
+    currentVersion: "0.95",
     notifyUpgrade: false,
     forceUpgrade: false,
   };
