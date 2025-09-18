@@ -15,7 +15,7 @@ exports = async function(payload) {
 
   // Android AOSP STB
   const androidstbObj = {
-    currentVersion: "0.103",
+    currentVersion: "0.104",
     notifyUpgrade: false,
     forceUpgrade: false,
   };
