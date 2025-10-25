@@ -211,7 +211,7 @@
     {
         "http_method": "*",
         "route": "/getmydatatest",
-        "function_name": "api_get_my_data_v5",
+        "function_name": "api_get_my_data_test",
         "validation_method": "NO_VALIDATION",
         "respond_result": true,
         "fetch_custom_user_data": false,
