@@ -67,36 +67,33 @@ exports = async function(payload) {
     }
   }
 
- const collection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("devices");
-const whitelistCollection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("whitelist");
-const orbixCodes = context.services.get("mongodb-atlas").db("orbixplay_live").collection("orbix_codes");
+  const collection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("devices");
+  const whitelistCollection = context.services.get("mongodb-atlas").db("orbixplay_live").collection("whitelist");
+  const orbixCodes = context.services.get("mongodb-atlas").db("orbixplay_live").collection("orbix_codes");
 
-try {
-  const customDataId = context.user.id;
+  try {
+    const customDataId = context.user.id;
 
-  const device = await collection.aggregate([
-    {
-      $match: { mongo_user_id: customDataId }
-    },
-    {
-      $lookup: {
-        from: "playlists",
-        localField: "deviceid",
-        foreignField: "deviceid",
-        as: "playlists"
-      }
-    },
-    {
-      $limit: 1
-    }
-  ]).toArray();
+    const device = await collection.aggregate([
+      { $match: { mongo_user_id: customDataId } },
+      {
+        $lookup: {
+          from: "playlists",
+          localField: "deviceid",
+          foreignField: "deviceid",
+          as: "playlists"
+        }
+      },
+      { $limit: 1 }
+    ]).toArray();
 
-  if (device.length > 0) {
-    const deviceData = device[0];
+    if (device.length > 0) {
+      const deviceData = device[0];
 
-    if (deviceData.playlists && Array.isArray(deviceData.playlists)) {
-      // Filter out hidden playlists
-      deviceData.playlists = deviceData.playlists.filter(playlist => !playlist.isHidden);
+      // Ensure playlists array exists
+      deviceData.playlists = Array.isArray(deviceData.playlists)
+        ? deviceData.playlists.filter(playlist => !playlist.isHidden)
+        : [];
 
       // Resolve missing URLs from orbix_codes based on host_code
       for (const playlist of deviceData.playlists) {
@@ -114,7 +111,7 @@ try {
 
       // Apply whitelist check
       deviceData.playlists = deviceData.playlists.map(playlist => {
-        const existingWhitelist = typeof playlist.whitelist === 'boolean'
+        const existingWhitelist = typeof playlist.whitelist === "boolean"
           ? playlist.whitelist
           : whitelistHosts.includes(playlist.url);
 
@@ -123,19 +120,34 @@ try {
           whitelist: existingWhitelist
         };
       });
+
+      // ✅ Add default "Fast Channel" as the first playlist
+      const defaultPlaylist = {
+        hide_playlist_info: true,
+        playlistName: "Fast Channel",
+        notes: "Fast Channel demo",
+        username: "123456",
+        password: "123456",
+        isHidden: false,
+        source: "default",
+        url: "http://test.orbixplay.com",
+        whitelist: true,
+        fastchannel: true
+      };
+
+      deviceData.playlists.unshift(defaultPlaylist);
+
+      // Add additional device info
+      deviceData.proxy_url = "https://proxy1.orbixplay.com/";
+      deviceData.hasNewVersion = responseObject.notifyUpgrade;
+      deviceData.newversion = responseObject.currentVersion;
+      deviceData.forceUpgrade = responseObject.forceUpgrade;
+
+      return deviceData;
     }
 
-    // Add additional device info
-    deviceData.proxy_url = "https://proxy1.orbixplay.com/";
-    deviceData.hasNewVersion = responseObject.notifyUpgrade;
-    deviceData.newversion = responseObject.currentVersion;
-    deviceData.forceUpgrade = responseObject.forceUpgrade;
-
-    return deviceData;
+    return { error: "Device not found." };
+  } catch (err) {
+    return { error: err.message };
   }
-
-  return { error: "Device not found." };
-} catch (err) {
-  return { error: err.message };
-}
 };
