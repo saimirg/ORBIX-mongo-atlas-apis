@@ -1,21 +1,21 @@
 exports = async function(payload) {
   // Android TV
   const androidtvObj = {
-    currentVersion: "0.111",
+    currentVersion: "0.112",
     notifyUpgrade: false,
     forceUpgrade: false,
   };
 
   // Firestick 
   const firestickObj = {
-    currentVersion: "0.111",
+    currentVersion: "0.112",
     notifyUpgrade: false,
     forceUpgrade: false,
   };
 
   // Android AOSP STB
   const androidstbObj = {
-    currentVersion: "0.111",
+    currentVersion: "0.112",
     notifyUpgrade: false,
     forceUpgrade: false,
   };
