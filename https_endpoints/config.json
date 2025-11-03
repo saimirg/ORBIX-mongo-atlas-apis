@@ -167,7 +167,7 @@
     {
         "http_method": "POST",
         "route": "/add_playlist_on_mobile",
-        "function_name": "add_playlist_mobile",
+        "function_name": "add_playlist_mobile_v2",
         "validation_method": "NO_VALIDATION",
         "respond_result": false,
         "fetch_custom_user_data": true,
