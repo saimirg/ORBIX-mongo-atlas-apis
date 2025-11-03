@@ -14,6 +14,19 @@
             "search": true,
             "read": true,
             "write": true
+        },
+        {
+            "name": "readAll",
+            "apply_when": {},
+            "document_filters": {
+                "read": true,
+                "write": false
+            },
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "read": true,
+            "write": false
         }
     ]
 }
