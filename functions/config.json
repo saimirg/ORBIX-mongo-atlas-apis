@@ -103,7 +103,7 @@
         "private": false
     },
     {
-        "name": "api_get_my_data_v6",
+        "name": "api_get_my_data_fastchannel",
         "private": false
     }
 ]
