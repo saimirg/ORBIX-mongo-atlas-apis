@@ -4,7 +4,7 @@ exports = async function (payload, response) {
     const requestBody = payload.body.text();
     console.log('Extracted Request Body:', requestBody);
     const parsedPayload = JSON.parse(requestBody);
-    const { url, host_code, username, password, playlistName, deviceid, hide_playlist_info } = parsedPayload;
+    const { url, host_code, username, password, playlistName, deviceid} = parsedPayload;
 
     console.log('Extracted Device ID:', deviceid);
 
@@ -44,7 +44,7 @@ console.log("Host code is: ", host_code);
         newPlaylist.hide_playlist_info = true;
     } else {
         newPlaylist.url = url;
-        newPlaylist.hide_playlist_info = hide_playlist_info;
+        newPlaylist.hide_playlist_info = false;
     }
 
     const insertResult = await playlistsCollection.insertOne(newPlaylist);
