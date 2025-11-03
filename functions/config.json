@@ -105,5 +105,9 @@
     {
         "name": "api_get_my_data_fastchannel",
         "private": false
+    },
+    {
+        "name": "add_playlist_mobile_v2",
+        "private": false
     }
 ]
