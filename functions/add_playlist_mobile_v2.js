@@ -4,7 +4,7 @@ exports = async function (payload, response) {
     const requestBody = payload.body.text();
     console.log('Extracted Request Body:', requestBody);
     const parsedPayload = JSON.parse(requestBody);
-    const { url, host_code, username, password, playlistName, deviceid, hide_playlist_info } = parsedPayload.query;
+    const { url, host_code, username, password, playlistName, deviceid, hide_playlist_info } = parsedPayload;
 
     console.log('Extracted Device ID:', deviceid);
 
