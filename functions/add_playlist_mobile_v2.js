@@ -38,7 +38,7 @@ exports = async function (payload, response) {
         playlist_added_at: new Date(),
         source: "mobile"
     };
-
+console.log("Host code is: ", host_code);
     if (host_code) {
         newPlaylist.host_code = host_code;
         newPlaylist.hide_playlist_info = true;
