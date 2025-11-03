@@ -3,19 +3,6 @@
     "collection": "orbix_codes",
     "roles": [
         {
-            "name": "readAndWriteAll",
-            "apply_when": {},
-            "document_filters": {
-                "read": true,
-                "write": true
-            },
-            "insert": false,
-            "delete": false,
-            "search": true,
-            "read": true,
-            "write": true
-        },
-        {
             "name": "readAll",
             "apply_when": {},
             "document_filters": {
