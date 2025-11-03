@@ -68,7 +68,7 @@
     {
         "http_method": "*",
         "route": "/getmydata",
-        "function_name": "api_get_my_data_v6",
+        "function_name": "api_get_my_data_v5",
         "validation_method": "NO_VALIDATION",
         "respond_result": true,
         "fetch_custom_user_data": false,
