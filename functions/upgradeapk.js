@@ -31,9 +31,9 @@ exports = function({ query, headers, body}, response) {
     // response.setHeader('Content-Type', 'application/text')
 // 999999999999999999999999999999999999999999999999
       let upgraderesponse = {
-    "versionName":"0.125",
-    "versionCode": "1250000000",
-    "apkUrl":"https://apk.orbixplay.com/Firestick-v.0.125.apk",
+    "versionName":"0.126",
+    "versionCode": "1260000000",
+    "apkUrl":"https://apk.orbixplay.com/Firestick-v.0.126.apk",
     "forceUpdate": false
   };
     return  upgraderesponse;
